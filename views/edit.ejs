@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/home/<%=data.id%>?_method=PATCH" method="POST">
+        <div class="post">
+            <p>id : <%=data.id%></p>
+            <p>email : <%=data.email%></p>
+            <p>Update your username</p>
+            <textarea name="username" id="">
+                <%=data.username%>
+            </textarea>
+            <br><br>
+            <input type="password" name="password" id="" placeholder="enter you password">
+        </div>
+        <button>Save Changes</button>
+    </form>
+</body>
+</html>

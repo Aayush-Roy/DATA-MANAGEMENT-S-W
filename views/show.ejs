@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/home/show/new">create</a>
+    <table border="1px solidb black" align="center">
+        <tr>
+            <th>id</th>
+            <th>username</th>
+            <th>email</th>
+            <th>show</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <%for(post of user){%>
+            <tr>
+                <td><%=post.id%></td>
+                <td><%=post.username%></td>
+                <td><%=post.email%></td>
+                <form action="/home/<%=post.id%>/check" method="get">
+                    <td><button>show</button></td>
+                </form>
+                <form action="/home/<%=post.id%>/edit" method="">
+                    <td><button>Edit</button></td>
+                </form>
+                <form action="/home/<%=post.id%>?_method=DELETE" method="POST">
+                    <td><button>DELETE</button></td>
+                </form>
+            </tr>
+        <%}%>
+    </table>
+</body>
+</html>
